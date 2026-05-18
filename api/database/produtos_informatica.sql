@@ -29,6 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE DATABASE produtos_informatica;
 
+USE produtos_informatica;
+
 CREATE TABLE `categorias` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL
