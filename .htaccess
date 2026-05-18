@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /API-REST-PRODUTOS-PHP/
+RewriteBase /api-rest-produtos-php-main/
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
