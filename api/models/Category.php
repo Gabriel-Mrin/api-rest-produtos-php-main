@@ -4,7 +4,7 @@ namespace api\models;
 
 use api\core\Database;
 use PDO;
-class Product{
+class Category{
  
   public static function findAll(){
     $conn = new Database();

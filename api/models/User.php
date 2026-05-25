@@ -5,7 +5,7 @@ namespace api\models;
 use api\core\Database;
 use PDO;
 
-class Clientes {
+class User {
 
     public static function findAll() {
         $conn = new Database();
