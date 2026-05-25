@@ -1,0 +1,53 @@
+<?php
+
+namespace api\models;
+
+use api\core\Database;
+use PDO;
+class Product{
+ 
+  public static function findAll(){
+    $conn = new Database();
+    $result = $conn->executeQuery('SELECT * FROM categoria');
+    return $result->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+ 
+  public static function findById(int $id){
+    $conn = new Database();
+    $result = $conn->executeQuery('SELECT * FROM categoria WHERE id = :ID LIMIT 1', array(
+      ':ID' => $id
+    ));
+
+    return $result->fetch(PDO::FETCH_ASSOC);
+  }
+
+  public static function updateById(int $id, array $data){
+
+    $conn = new Database();
+
+    return $conn->executeQuery(
+      'UPDATE categoria 
+       SET 
+          nome = :NOME,
+       WHERE id = :ID',
+      array(
+        ':NOME' => $data['nome'],
+        ':ID' => $id
+      )
+    );
+  }
+
+   public static function deleteById(int $id){
+
+    $conn = new Database();
+
+    return $conn->executeQuery(
+      'DELETE FROM categoria WHERE id = :ID',
+      array(
+        ':ID' => $id
+      )
+    );
+  }
+
+}
