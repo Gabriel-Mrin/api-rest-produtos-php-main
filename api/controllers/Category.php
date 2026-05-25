@@ -2,19 +2,19 @@
 
 use api\core\Controller;
 
-class Product extends Controller{
+class Category extends Controller{
   
   public function index(){
-    $Product = $this->model('Product'); // é retornado o model Product()
-    $data = $Product::findAll();
-    $this->view('product/index', ['products' => $data]);
+    $Category = $this->model('Category'); // é retornado o model Product()
+    $data = $Category::findAll();
+    $this->view('category/index', ['categories' => $data]);
   }
  
   public function show($id = null){
     if (is_numeric($id)) {
-      $Product = $this->model('Product');
-      $data = $Product::findById($id);
-      $this->view('product/show', ['product' => $data]);
+      $Category = $this->model('Category');
+      $data = $Category::findById($id);
+      $this->view('category/show', ['category' => $data]);
     } else {
       $this->pageNotFound();
     }
@@ -25,19 +25,19 @@ class Product extends Controller{
 
   if (is_numeric($id)) {
 
-    $Product = $this->model('Product');
+    $Category = $this->model('Category');
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-      $Product::updateById($id, $_POST);
+      $Category::updateById($id, $_POST);
 
-      header('Location: ' . BASE_URL . '/product');
+      header('Location: ' . BASE_URL . '/category');
       exit;
     }
 
-    $data = $Product::findById($id);
+    $data = $Category::findById($id);
 
-    $this->view('product/edit', ['product' => $data]);
+    $this->view('category/edit', ['category' => $data]);
 
   } else {
 
@@ -52,11 +52,11 @@ public function delete($id = null){
 
   if (is_numeric($id)) {
 
-    $Product = $this->model('Product');
+    $Category = $this->model('Category');
 
-    $Product::deleteById($id);
+    $Category::deleteById($id);
 
-    header('Location: ' . BASE_URL . '/product');
+    header('Location: ' . BASE_URL . '/category');
 
   } else {
 
