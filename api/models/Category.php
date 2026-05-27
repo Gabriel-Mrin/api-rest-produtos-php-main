@@ -50,4 +50,17 @@ class Category{
     );
   }
 
+  public static function create(array $data){
+
+  $conn = new Database();
+
+  return $conn->executeQuery(
+    'INSERT INTO categorias (nome)
+     VALUES (:NOME)',
+    array(
+      ':NOME' => $data['nome']
+    )
+  );
+}
+
 }
