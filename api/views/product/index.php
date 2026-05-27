@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-8 offset-2" style="margin-top:100px">
         <h2>Produtos</h2>
+        <a href="<?= BASE_URL ?>/product/create">Novo Produto</a>
         <table class="table">
           <thead>
             <tr>
@@ -17,8 +18,6 @@
               <td><?= $product['id'] ?></td>
               <td><?= $product['nome'] ?></td>
               <td>
-                <a href="<?= BASE_URL ?>/product/create">Novo Produto</a>
-                |
                 <a href="<?= BASE_URL ?>/product/show/<?= $product['id'] ?>">Ver</a>
                 |
                 <a href="<?= BASE_URL ?>/product/edit/<?= $product['id'] ?>">Editar</a>
