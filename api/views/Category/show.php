@@ -19,6 +19,7 @@
             <?php }?>
           </tbody>
         </table>
+        <a href="<?= BASE_URL ?>/category">Voltar</a>
       </div>
     </div>
   </div>
