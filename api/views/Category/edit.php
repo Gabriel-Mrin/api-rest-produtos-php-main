@@ -1,4 +1,4 @@
-<h1>Editar Produto</h1>
+<h1>Editar Categoria</h1>
 
 <form method="POST">
 
@@ -8,27 +8,7 @@
     value="<?= $category['nome'] ?>"
   >
 
-  <textarea name="descricao"><?= $product['descricao'] ?></textarea>
-
-  <input 
-    type="number"
-    step="0.01"
-    name="preco"
-    value="<?= $product['preco'] ?>"
-  >
-
-  <input 
-    type="number"
-    name="estoque"
-    value="<?= $product['estoque'] ?>"
-  >
-
-  <input 
-    type="number"
-    name="categoria_id"
-    value="<?= $product['categoria_id'] ?>"
-  >
-
+  
   <button type="submit">
     Salvar
   </button>
