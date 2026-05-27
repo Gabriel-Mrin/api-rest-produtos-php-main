@@ -2,7 +2,7 @@
 
 use api\core\Controller;
 
-class Product extends Controller{
+class user extends Controller{
   
   public function index(){
     $Product = $this->model('User'); // é retornado o model Product()
