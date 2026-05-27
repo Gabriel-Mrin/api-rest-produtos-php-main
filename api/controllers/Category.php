@@ -65,4 +65,21 @@ public function delete($id = null){
   }
 
 }
+
+public function create(){
+
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $Category = $this->model('Category');
+
+    $Category::create($_POST);
+
+    header('Location: ' . BASE_URL . '/category');
+    exit;
+  }
+
+  $this->view('category/create');
 }
+}
+
+

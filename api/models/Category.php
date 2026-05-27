@@ -29,7 +29,7 @@ class Category{
     return $conn->executeQuery(
       'UPDATE categorias 
        SET 
-          nome = :NOME,
+          nome = :NOME
        WHERE id = :ID',
       array(
         ':NOME' => $data['nome'],
