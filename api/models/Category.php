@@ -8,14 +8,14 @@ class Category{
  
   public static function findAll(){
     $conn = new Database();
-    $result = $conn->executeQuery('SELECT * FROM categoria');
+    $result = $conn->executeQuery('SELECT * FROM categorias');
     return $result->fetchAll(PDO::FETCH_ASSOC);
   }
 
  
   public static function findById(int $id){
     $conn = new Database();
-    $result = $conn->executeQuery('SELECT * FROM categoria WHERE id = :ID LIMIT 1', array(
+    $result = $conn->executeQuery('SELECT * FROM categorias WHERE id = :ID LIMIT 1', array(
       ':ID' => $id
     ));
 
@@ -27,7 +27,7 @@ class Category{
     $conn = new Database();
 
     return $conn->executeQuery(
-      'UPDATE categoria 
+      'UPDATE categorias 
        SET 
           nome = :NOME,
        WHERE id = :ID',
@@ -43,7 +43,7 @@ class Category{
     $conn = new Database();
 
     return $conn->executeQuery(
-      'DELETE FROM categoria WHERE id = :ID',
+      'DELETE FROM categorias WHERE id = :ID',
       array(
         ':ID' => $id
       )
