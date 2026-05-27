@@ -8,6 +8,9 @@
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Nome</th>
+              <th scope="col">Descição</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Estoque</th>
             </tr>
           </thead>
           <tbody>
@@ -15,6 +18,9 @@
             <tr>
               <td><?= $product['id'] ?></td>
               <td><?= $product['nome'] ?></td>
+              <td><?= $product['descricao'] ?></td>
+              <td><?= $product['preco'] ?></td>
+              <td><?= $product['estoque'] ?></td>
             </tr>
             <?php }?>
           </tbody>
