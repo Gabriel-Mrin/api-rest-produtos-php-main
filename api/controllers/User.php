@@ -2,7 +2,7 @@
 
 use api\core\Controller;
 
-class user extends Controller{
+class User extends Controller{
   
   public function index(){
     $Product = $this->model('User'); // é retornado o model Product()
@@ -13,7 +13,7 @@ class user extends Controller{
   public function show($cpf  = null){
     if (is_numeric($cpf )) {
       $User = $this->model('User');
-      $data = $User::findById($cpf);
+      $data = $User::findByCpf($cpf);
       $this->view('user/show', ['user' => $data]);
     } else {
       $this->pageNotFound();
@@ -29,13 +29,13 @@ class user extends Controller{
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-      $User::updateById($cpf , $_POST);
+      $User::updateByCpf($cpf , $_POST);
 
       header('Location: ' . BASE_URL . '/user');
       exit;
     }
 
-    $data = $User::findById($cpf );
+    $data = $User::findByCpf($cpf );
 
     $this->view('user/edit', ['user' => $data]);
 
@@ -48,13 +48,13 @@ class user extends Controller{
 }
 
 
-public function delete($id = null){
+public function delete($cpf = null){
 
-  if (is_numeric($id)) {
+  if (is_numeric($cpf)) {
 
     $User = $this->model('User');
 
-    $User::deleteById($id);
+    $User::deleteByCpf($cpf);
 
     header('Location: ' . BASE_URL . '/user');
 
