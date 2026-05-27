@@ -17,9 +17,10 @@
               <td><?= $product['id'] ?></td>
               <td><?= $product['nome'] ?></td>
               <td>
+                <a href="<?= BASE_URL ?>/category/show/<?= $category['id'] ?>">Ver</a>
+                |
                 <a href="<?= BASE_URL ?>/product/edit/<?= $product['id'] ?>">Editar</a>
-              </td>
-              <td>
+                |             
                 <a href="<?= BASE_URL ?>/product/delete/<?= $product['id'] ?>">Excluir</a>
               </td>
             </tr>
