@@ -17,6 +17,8 @@
               <td><?= $category['id'] ?></td>
               <td><?= $category['nome'] ?></td>
               <td>
+                <a href="<?= BASE_URL ?>/category/create">Nova Categoria</a>
+                |
                 <a href="<?= BASE_URL ?>/category/show/<?= $category['id'] ?>">Ver</a>
                 |
                 <a href="<?= BASE_URL ?>/category/edit/<?= $category['id'] ?>">Editar</a>
