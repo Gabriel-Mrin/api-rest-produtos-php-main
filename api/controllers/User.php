@@ -65,4 +65,20 @@ public function delete($id = null){
   }
 
 }
+
+ public function create(){
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+      $User = $this->model('User');
+
+      $User::create($_POST);
+
+      header('Location: ' . BASE_URL . '/user');
+      exit;
+    }
+
+    $this->view('user/create');
+  }
+
 }
