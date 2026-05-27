@@ -25,6 +25,7 @@
             <?php }?>
           </tbody>
         </table>
+        <a href="<?= BASE_URL ?>/product">Voltar</a>
       </div>
     </div>
   </div>
