@@ -65,4 +65,19 @@ public function delete($id = null){
   }
 
 }
+
+public function create(){
+
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $Product = $this->model('Product');
+
+    $Product::create($_POST);
+
+    header('Location: ' . BASE_URL . '/product');
+    exit;
+  }
+
+  $this->view('product/create');
+}
 }
