@@ -60,4 +60,19 @@ class User {
             )
         );
     }
+
+    public static function create(array $data) {
+
+    $conn = new Database();
+
+    return $conn->executeQuery(
+        'INSERT INTO clientes (cpf, nome, email)
+         VALUES (:CPF, :NOME, :EMAIL)',
+        array(
+            ':CPF' => $data['cpf'],
+            ':NOME' => $data['nome'],
+            ':EMAIL' => $data['email']
+        )
+    );
+}
 }
