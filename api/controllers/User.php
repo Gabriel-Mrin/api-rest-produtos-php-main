@@ -10,10 +10,10 @@ class user extends Controller{
     $this->view('user/index', ['users' => $data]);
   }
  
-  public function show($id = null){
-    if (is_numeric($id)) {
+  public function show($cpf  = null){
+    if (is_numeric($cpf )) {
       $User = $this->model('User');
-      $data = $User::findById($id);
+      $data = $User::findById($cpf);
       $this->view('user/show', ['user' => $data]);
     } else {
       $this->pageNotFound();
@@ -21,21 +21,21 @@ class user extends Controller{
   }
 
 
-  public function edit($id = null){
+  public function edit($cpf  = null){
 
-  if (is_numeric($id)) {
+  if (is_numeric($cpf )) {
 
     $User = $this->model('User');
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-      $User::updateById($id, $_POST);
+      $User::updateById($cpf , $_POST);
 
       header('Location: ' . BASE_URL . '/user');
       exit;
     }
 
-    $data = $User::findById($id);
+    $data = $User::findById($cpf );
 
     $this->view('user/edit', ['user' => $data]);
 
